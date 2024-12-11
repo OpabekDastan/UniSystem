@@ -1,0 +1,25 @@
+package finalOOP;
+
+public class Admin extends Employee {
+    public Student createStudent() {
+        // Implementation to create a new student
+    }
+
+    public Teacher createTeacher() {
+        // Implementation to create a new teacher
+    }
+
+    public void removeUser(User user) {
+        // Implementation to remove a user
+    }
+
+    public void updateUser(User user) {
+        // Implementation to update a user
+    }
+
+    public void seeLogFiles() {
+        // Implementation to view log files
+    }
+
+    private DatabaseCollections dbContext;
+}

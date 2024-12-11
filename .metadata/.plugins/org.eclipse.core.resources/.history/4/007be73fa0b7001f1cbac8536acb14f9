@@ -1,0 +1,19 @@
+package finalOOP;
+import java.util.*;
+
+
+public class DatabaseCollections {
+	private List<Student> users = new ArrayList<>();
+    private List<Student> students = new ArrayList<>();
+    private List<Teacher> teachers = new ArrayList<>();
+    private List<Courses> courses = new ArrayList<>();
+    private List<Lesson> lessons = new ArrayList<>();
+	public Object getTeachers() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	public Object getStudents() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

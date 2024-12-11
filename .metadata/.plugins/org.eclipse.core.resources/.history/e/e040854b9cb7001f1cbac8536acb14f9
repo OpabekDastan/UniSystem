@@ -1,0 +1,8 @@
+package finalOOP;
+
+public class DatabaseCollections {
+    private List<Student> students = new ArrayList<>();
+    private List<Teacher> teachers = new ArrayList<>();
+    private List<Courses> courses = new ArrayList<>();
+    private List<Lesson> lessons = new ArrayList<>();
+}

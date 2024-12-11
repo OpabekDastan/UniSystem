@@ -1,0 +1,41 @@
+package finalOOP;
+
+public class Student extends User {
+    private String degree;
+    private String yearOfStudy;
+    private String faculty;
+    private boolean hasScholarship;
+    private StudentAdvisor advisor;
+
+    public Student(String email, String password, String firstName, String lastName, String degree, String yearOfStudy, String faculty, boolean hasScholarship) {
+        super(email, password, firstName, lastName);
+        this.degree = degree;
+        this.yearOfStudy = yearOfStudy;
+        this.faculty = faculty;
+        this.hasScholarship = hasScholarship;
+    }
+
+    public String getDegree() {
+        return degree;
+    }
+
+    public String getYearOfStudy() {
+        return yearOfStudy;
+    }
+
+    public String getFaculty() {
+        return faculty;
+    }
+
+    public boolean hasScholarship() {
+        return hasScholarship;
+    }
+
+    public StudentAdvisor getAdvisor() {
+        return advisor;
+    }
+
+    public void setAdvisor(StudentAdvisor advisor) {
+        this.advisor = advisor;
+    }
+}

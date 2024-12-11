@@ -1,0 +1,42 @@
+package finalOOP;
+
+public class Admin extends Employee {
+    public Admin(String email, String password, String id, String firstName, String lastName, double salary, int yearOfJoin) {
+        super(email, password, id, firstName, lastName, salary, yearOfJoin); 
+    }
+
+    public Student createStudent() {
+        Student student = new Student();
+        // Дальнейшая инициализация студента
+        return student;
+    }
+
+    public Teacher createTeacher() {
+        Teacher teacher = new Teacher();
+        // Дальнейшая инициализация преподавателя
+        return teacher;
+    }
+
+    public void removeUser(User user) {
+        // Удаление пользователя из базы данных
+        DataBase.users.remove(user);
+    }
+
+    public void updateUser(User user) {
+        // Обновление информации о пользователе в базе данных
+        for (User u : DataBase.users) {
+            if (u.getId().equals(user.getId())) {
+                u.setEmail(user.getEmail());
+                u.setPassword(user.getPassword());
+                break;
+            }
+        }
+    }
+
+    public void seeLogFiles() {
+        // Просмотр логов пользователей
+        for (Log log : DataBase.logs) {
+            System.out.println(log);
+        }
+    }
+}

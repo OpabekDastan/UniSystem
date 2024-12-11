@@ -1,0 +1,29 @@
+package finalOOP;
+
+public class Student extends User {
+    private String degree;
+    private String major;
+    private double gpa;
+    private int yearOfStudy;
+    private List<Courses> courses = new ArrayList<>();
+
+    public Student(String degree, String major, double gpa, int yearOfStudy) {
+        super(email, password, id, firstName, lastName); // Передача данных пользователя в конструктор суперкласса
+        this.degree = degree;
+        this.major = major;
+        this.gpa = gpa;
+        this.yearOfStudy = yearOfStudy;
+    }
+
+    public void viewCourses() {
+        // Реализация просмотра курсов
+    }
+
+    public void registerForCourses() {
+        // Реализация регистрации на курсы
+    }
+
+    public void viewJournal() {
+        // Реализация просмотра журнала
+    }
+}

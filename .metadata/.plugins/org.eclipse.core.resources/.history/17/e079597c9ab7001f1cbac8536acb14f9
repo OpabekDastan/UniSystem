@@ -1,0 +1,384 @@
+// Class: Admin
+public class Admin extends Employee {
+    public Admin(double salary, int yearOfJoin) {
+        super(salary, yearOfJoin);
+    }
+
+    public Student createStudent() {
+        return new Student();
+    }
+    public Teacher createTeacher() {
+        return new Teacher();
+    }
+    public void removeUser() {
+    }
+    public void updateUser() {
+    }
+    public void seeLogFiles() {
+    }
+}
+
+// Class: Courses
+public class Courses {
+    private CoursesType type;
+    private String name;
+    private String code;
+    private int credits;
+
+    public Courses getCourse() {
+        return this;
+    }
+    public void courseReg() {
+    }
+    public int getStudentLimit() {
+        return 30;
+    }
+}
+
+// Class: DatabaseCollections
+public class DatabaseCollections {
+    private List<Student> students = new ArrayList<>();
+    private List<Teacher> teachers = new ArrayList<>();
+    private List<Courses> courses = new ArrayList<>();
+    private List<Lesson> lessons = new ArrayList<>();
+}
+
+// Class: Employee
+public class Employee extends User {
+    private double salary;
+    private int yearOfJoin;
+
+    public Employee(double salary, int yearOfJoin) {
+        this.salary = salary;
+        this.yearOfJoin = yearOfJoin;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+}
+
+// Class: FinanceManager
+public class FinanceManager extends Employee {
+    public FinanceManager(double salary, int yearOfJoin) {
+        super(salary, yearOfJoin);
+    }
+
+    public void sendScholarship() {
+    }
+    public void sendSalary() {
+    }
+    public void scholarshipReport() {
+    }
+    public void salaryReport() {
+    }
+}
+
+// Class: Lesson
+public class Lesson {
+    private String room;
+    private String time;
+    private LessonType lessonType;
+    private boolean isAttended;
+}
+
+// Class: Manager
+public class Manager extends Employee {
+    private typeOfManager type;
+
+    public Manager(double salary, int yearOfJoin, typeOfManager type) {
+        super(salary, yearOfJoin);
+        this.type = type;
+    }
+
+    public void createReports() {
+    }
+    public void manageNews() {
+    }
+    public void createCourse() {
+    }
+    public void createLesson() {
+    }
+    public void approveReg() {
+    }
+}
+
+// Class: Student
+public class Student extends User {
+    private String degree;
+    private String major;
+    private double gpa;
+    private int yearOfStudy;
+    private List<Courses> courses = new ArrayList<>();
+
+    public Student(String degree, String major, double gpa, int yearOfStudy) {
+        this.degree = degree;
+        this.major = major;
+        this.gpa = gpa;
+        this.yearOfStudy = yearOfStudy;
+    }
+
+    public void viewCourses() {
+    }
+    public void registerForCourses() {
+    }
+    public void viewJournal() {
+    }
+}
+
+// Class: Teacher
+public class Teacher extends Employee {
+    private TeacherType type;
+    private Courses course;
+
+    public Teacher(double salary, int yearOfJoin, TeacherType type) {
+        super(salary, yearOfJoin);
+        this.type = type;
+    }
+
+    public void sendComplaint() {
+    }
+    public void viewCourse() {
+    }
+    public void manageCourse() {
+    }
+    public void viewStudents() {
+    }
+    public void markStudents() {
+    }
+}
+
+// Class: Transcript
+public class Transcript {
+    private Courses courseName;
+    private double grades;
+    private double firstAtt;
+    private double secondAtt;
+    private double finalExam;
+
+    public Transcript(Courses courseName, double grades, double firstAtt, double secondAtt, double finalExam) {
+        this.courseName = courseName;
+        this.grades = grades;
+        this.firstAtt = firstAtt;
+        this.secondAtt = secondAtt;
+        this.finalExam = finalExam;
+    }
+
+    public double calculateGPAforCourse() {
+        return (firstAtt + secondAtt + finalExam) / 3;
+    }
+    public String calculateLetterMark() {
+        if (grades >= 90) return "A";
+        if (grades >= 80) return "B";
+        if (grades >= 70) return "C";
+        if (grades >= 60) return "D";
+        return "F";
+    }
+}
+
+// Interface: Reasearchable
+public interface Reasearchable {
+    void doResearch();
+}
+
+// Interface: Supervisorable
+public interface Supervisorable {
+    void becomeSupervisor();
+}
+
+// Interface: ViewInterface
+public interface ViewInterface {
+    void render();
+    void handleInput();
+}
+
+// Enum: CoursesType
+public enum CoursesType {
+    Major,
+    Minor,
+    FreeElective
+}
+
+// Enum: Language
+public enum Language {
+    ENG,
+    KZ,
+    RUS
+}
+
+// Enum: LessonType
+public enum LessonType {
+    Lecture,
+    Practice
+}
+
+// Enum: TeacherType
+public enum TeacherType {
+    TUTOR,
+    PROFESSOR,
+    LECTOR
+}
+
+// Enum: typeOfManager
+public enum typeOfManager {
+    departmentHead,
+    dean,
+    researchManager,
+    registrar
+}
+
+//Class: User
+public class User {
+ private String email;
+ private String password;
+ private String id;
+ private String firstName;
+ private String lastName;
+ private boolean isLogged;
+
+ public User(String email, String password, String id, String firstName, String lastName) {
+     this.email = email;
+     this.password = password;
+     this.id = id;
+     this.firstName = firstName;
+     this.lastName = lastName;
+     this.isLogged = false;
+ }
+
+ public void changePassword(String newPassword) {
+     this.password = newPassword;
+ }
+
+ public boolean logIn(String enteredPassword) {
+     if (this.password.equals(enteredPassword)) {
+         this.isLogged = true;
+         return true;
+     }
+     return false;
+ }
+
+ public void logOut() {
+     this.isLogged = false;
+ }
+}
+
+//Class: Journal
+public class Journal {
+ private List<User> subscribers = new ArrayList<>();
+
+ public void subscribeToJournal(User user) {
+     subscribers.add(user);
+ }
+
+ public void updateNotification() {
+     // Implementation for sending notifications
+ }
+}
+
+//Class: ResearchJournal
+public class ResearchJournal extends Journal {
+ private List<ResearchPaper> articles = new ArrayList<>();
+
+ public void addArticle(ResearchPaper paper) {
+     articles.add(paper);
+ }
+}
+
+//Class: ResearchPaper
+public class ResearchPaper {
+ private int dateOfPublication;
+ private int articleLength;
+ private String citations;
+ private String title;
+ private Researcher author;
+
+ public ResearchPaper(String title, int dateOfPublication, int articleLength, String citations, Researcher author) {
+     this.title = title;
+     this.dateOfPublication = dateOfPublication;
+     this.articleLength = articleLength;
+     this.citations = citations;
+     this.author = author;
+ }
+
+ public String getCitation() {
+     return citations;
+ }
+}
+
+//Class: ResearchProject
+public class ResearchProject {
+ private String title;
+ private List<ResearchPaper> publishedPapers = new ArrayList<>();
+ private List<Researcher> projectParticipants = new ArrayList<>();
+
+ public void addParticipant(Researcher researcher) {
+     projectParticipants.add(researcher);
+ }
+
+ public void addPublishedPaper(ResearchPaper paper) {
+     publishedPapers.add(paper);
+ }
+}
+
+//Class: Researcher
+public class Researcher extends User implements Reasearchable, Supervisorable {
+ private List<ResearchProject> researchProjects = new ArrayList<>();
+ private List<ResearchPaper> researchPapers = new ArrayList<>();
+
+ public Researcher(String email, String password, String id, String firstName, String lastName) {
+     super(email, password, id, firstName, lastName);
+ }
+
+ public void doResearch() {
+     // Implementation for conducting research
+ }
+
+ public void becomeSupervisor() {
+     // Implementation for becoming a supervisor
+ }
+
+ public void printPapers() {
+     for (ResearchPaper paper : researchPapers) {
+         System.out.println(paper.getCitation());
+     }
+ }
+
+ public int calculateHIndex() {
+     return researchPapers.size();
+ }
+}
+
+//Class: StudOrganizations
+public class StudOrganizations {
+ private String nameOfOrganization;
+ private List<Student> members = new ArrayList<>();
+ private Student head;
+
+ public StudOrganizations(String nameOfOrganization, Student head) {
+     this.nameOfOrganization = nameOfOrganization;
+     this.head = head;
+ }
+
+ public Student getHead() {
+     return head;
+ }
+
+ public void addMember(Student member) {
+     members.add(member);
+ }
+}
+
+//Enum: UrgencyLevel
+public enum UrgencyLevel {
+ Low,
+ Medium,
+ High
+}
+
+//Existing classes and enums
+//... (no changes to existing content)
+
+
+
+
+

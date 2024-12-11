@@ -1,0 +1,20 @@
+package finalOOP;
+
+public abstract class Employee extends User {
+    protected double salary;
+    protected int vacation;
+
+    public Employee(String email, String password, String firstName, String lastName, double salary, int vacation) {
+        super(email, password, firstName, lastName);
+        this.salary = salary;
+        this.vacation = vacation;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public int getVacation() {
+        return vacation;
+    }
+}

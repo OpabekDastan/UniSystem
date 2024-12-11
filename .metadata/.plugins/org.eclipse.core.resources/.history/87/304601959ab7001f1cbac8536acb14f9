@@ -1,0 +1,15 @@
+package finalOOP;
+
+public abstract class Employee extends User {
+    private double salary;
+    private int yearOfJoin;
+
+    public Employee() {
+        this.salary = salary;
+        this.yearOfJoin = yearOfJoin;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+}

@@ -1,0 +1,19 @@
+package finalOOP;
+
+public class Researcher extends Employee implements Researchable {
+    private int countOfPapers;
+
+    public Researcher(String email, String password, String firstName, String lastName, double salary, int vacation, int countOfPapers) {
+        super(email, password, firstName, lastName, salary, vacation);
+        this.countOfPapers = countOfPapers;
+    }
+
+    public int getCountOfPapers() {
+        return countOfPapers;
+    }
+
+    @Override
+    public void doResearch() {
+        System.out.println(firstName + " " + lastName + " is doing research.");
+    }
+}

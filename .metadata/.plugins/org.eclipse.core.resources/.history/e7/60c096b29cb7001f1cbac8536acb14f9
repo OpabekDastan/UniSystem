@@ -1,0 +1,22 @@
+package finalOOP;
+
+public class Teacher extends Employee {
+    private TeacherType type;
+    private Courses course;
+
+    public Teacher(double salary, int yearOfJoin, TeacherType type) {
+        super(salary, yearOfJoin);
+        this.type = type;
+    }
+
+    public void sendComplaint() {
+    }
+    public void viewCourse() {
+    }
+    public void manageCourse() {
+    }
+    public void viewStudents() {
+    }
+    public void markStudents() {
+    }
+}

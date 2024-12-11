@@ -1,0 +1,35 @@
+package finalOOP;
+
+public class User {
+	 private String email;
+	 private String password;
+	 private String id;
+	 private String firstName;
+	 private String lastName;
+	 private boolean isLogged;
+
+	 public User(String email, String password, String id, String firstName, String lastName) {
+	     this.email = email;
+	     this.password = password;
+	     this.id = id;
+	     this.firstName = firstName;
+	     this.lastName = lastName;
+	     this.isLogged = false;
+	 }
+
+	 public void changePassword(String newPassword) {
+	     this.password = newPassword;
+	 }
+
+	 public boolean logIn(String enteredPassword) {
+	     if (this.password.equals(enteredPassword)) {
+	         this.isLogged = true;
+	         return true;
+	     }
+	     return false;
+	 }
+
+	 public void logOut() {
+	     this.isLogged = false;
+	 }
+	}

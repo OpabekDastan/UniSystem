@@ -1,0 +1,16 @@
+package finalOOP;
+
+public class FinanceManager extends Employee {
+    public FinanceManager(double salary, int yearOfJoin) {
+        super(salary, yearOfJoin);
+    }
+
+    public void sendScholarship() {
+    }
+    public void sendSalary() {
+    }
+    public void scholarshipReport() {
+    }
+    public void salaryReport() {
+    }
+}

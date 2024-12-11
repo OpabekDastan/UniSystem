@@ -1,0 +1,21 @@
+package finalOOP;
+
+public class Manager extends Employee {
+    private typeOfManager type;
+
+    public Manager(double salary, int yearOfJoin, typeOfManager type) {
+        super(salary, yearOfJoin);
+        this.type = type;
+    }
+
+    public void createReports() {
+    }
+    public void manageNews() {
+    }
+    public void createCourse() {
+    }
+    public void createLesson() {
+    }
+    public void approveReg() {
+    }
+}

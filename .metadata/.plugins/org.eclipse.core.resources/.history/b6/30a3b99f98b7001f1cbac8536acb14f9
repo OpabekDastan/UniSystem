@@ -1,0 +1,29 @@
+package finalOOP;
+
+public abstract class User {
+    protected String email;
+    protected String password;
+    protected String firstName;
+    protected String lastName;
+    protected boolean isLogged;
+
+    public User(String email, String password, String firstName, String lastName) {
+        this.email = email;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.isLogged = false;
+    }
+
+    public void logIn() {
+        this.isLogged = true;
+    }
+
+    public void logOut() {
+        this.isLogged = false;
+    }
+
+    public void changePassword(String newPassword) {
+        this.password = newPassword;
+    }
+}

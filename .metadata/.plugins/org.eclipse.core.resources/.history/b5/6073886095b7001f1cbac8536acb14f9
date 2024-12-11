@@ -1,0 +1,10 @@
+package finalOOP;
+
+public class Employee extends User {
+    private double salary;
+    private int yearOfJoin;
+
+    public double getSalary() {
+        // Implementation to get the employee's salary
+    }
+}

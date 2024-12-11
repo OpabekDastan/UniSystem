@@ -1,0 +1,31 @@
+package finalOOP;
+
+public class Course {
+    private CourseType type;
+    private String name;
+    private String code;
+    private int credits;
+
+    public Course(CourseType type, String name, String code, int credits) {
+        this.type = type;
+        this.name = name;
+        this.code = code;
+        this.credits = credits;
+    }
+
+    public CourseType getType() {
+        return type;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public int getCredits() {
+        return credits;
+    }
+}

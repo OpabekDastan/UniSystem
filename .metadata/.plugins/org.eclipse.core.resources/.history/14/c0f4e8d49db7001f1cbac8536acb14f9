@@ -1,0 +1,20 @@
+package finalOOP;
+
+public class Admin extends Employee {
+    public Admin(String email, String password, String id, String firstName, String lastName,double salary, int yearOfJoin) {
+    	super(email, password, id, firstName, lastName, salary, yearOfJoin); 
+    }
+
+    public Student createStudent() {
+        return new Student();
+    }
+    public Teacher createTeacher() {
+        return new Teacher();
+    }
+    public void removeUser() {
+    }
+    public void updateUser() {
+    }
+    public void seeLogFiles() {
+    }
+}

@@ -1,0 +1,20 @@
+package finalOOP;
+
+public class Admin extends Employee {
+    public Admin(double salary, int yearOfJoin) {
+        super(salary, yearOfJoin);
+    }
+
+    public Student createStudent() {
+        return new Student();
+    }
+    public Teacher createTeacher() {
+        return new Teacher();
+    }
+    public void removeUser() {
+    }
+    public void updateUser() {
+    }
+    public void seeLogFiles() {
+    }
+}

@@ -1,0 +1,24 @@
+package finalOOP;
+
+
+public class FinanceManager extends Employee {
+    public FinanceManager(String email, String password, String id, String firstName, String lastName,double salary, int yearOfJoin) {
+        super(email, password, id, firstName, lastName, salary, yearOfJoin); // Использование конструктора суперкласса
+    }
+
+    public void sendScholarship() {
+        // Реализация отправки стипендий
+    }
+
+    public void sendSalary() {
+        // Реализация отправки зарплат
+    }
+
+    public void scholarshipReport() {
+        // Реализация отчёта по стипендиям
+    }
+
+    public void salaryReport() {
+        // Реализация отчёта по зарплатам
+    }
+}

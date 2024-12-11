@@ -1,0 +1,39 @@
+package finalOOP;
+
+public class Admin extends Employee {
+    public Admin(String email, String password, String id, String firstName, String lastName, double salary, int yearOfJoin) {
+        super(email, password, id, firstName, lastName, salary, yearOfJoin); 
+    }
+
+    public Student createStudent() {
+        Student student = new Student();
+        // Дальнейшая инициализация студента
+        return student;
+    }
+
+    public void createStudent(String e_mail, String password, String name, String surname, String id, Date d, Gender g, Status s, String national, String num, String spec, int year, Degree degree,Faculty f) {
+		Student temp = new Student(e_mail, password, name, surname, id, d, g,s, national, num,spec, year, degree,f);
+		addUser(temp);
+	}
+	public void createAdmin(String e_mail, String password, String name, String surname, String id, Date d, Gender g, Status s,String national, String num, double salary, Date hireDate) {
+		Admin temp = new Admin(e_mail, password, name, surname, id, d, g, s, national, num, salary, hireDate);
+		addUser(temp);
+	}
+	public void createTeacher(String e_mail, String password, String name, String surname, String id, Date d, Gender g, Status s,String national, String num, double salary, Date hireDate) {
+		Teacher temp = new Teacher(e_mail, password, name, surname, id, d, g, s, national, num, salary, hireDate, null);
+		addUser(temp);
+		DatabaseCollections.teachers.add(temp);
+	}
+
+    public void removeUser(User user) 
+    }
+
+    public void updateUser(User user) {
+       
+    }
+
+    public void seeLogFiles() {
+        
+        
+    }
+}

@@ -1,0 +1,23 @@
+package finalOOP;
+
+public class Teacher extends Employee {
+    private TeacherType type;
+    private Department department;
+
+    public Teacher(String email, String password, String firstName, String lastName, double salary, int vacation, TeacherType type) {
+        super(email, password, firstName, lastName, salary, vacation);
+        this.type = type;
+    }
+
+    public TeacherType getType() {
+        return type;
+    }
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
+}

@@ -1,0 +1,11 @@
+package finalOOP;
+
+public class Admin extends Employee {
+    public Admin(String email, String password, String firstName, String lastName, double salary, int vacation) {
+        super(email, password, firstName, lastName, salary, vacation);
+    }
+
+    public void manageCourse(Course course) {
+        System.out.println("Managing course: " + course.getName());
+    }
+}
